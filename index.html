@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>STUDENT FORM</h1>
+    <!--form 1-->
+    <form class="form1">
+        <!--table 1-->
+        <table class="table-one" id="tableonez">
+            
+                <tr class="row_one" >
+                    <th class="name-style">Name</th>
+                    <th class="name-text"> <input type="text" name="male_female" id="rowonez"></th>
+                </tr>
+                <tr class="row_two" >
+                    <th class="age-style">Age</th>
+                    <th class="age-text"> <input type="number" id="rowtwoz" name="male_female"></th>
+                </tr>
+
+                <tr class="row_three" id="rowthreez">
+                    <th class="gender-style">Gender</th>
+                    <td class="gender-select"><input type="radio" name="male_female">Male
+                        <input type="radio" name="male_female">Female
+                    </td>
+                </tr>
+                <tr class="row_four" id="rowfourz">
+                    <th class="course-style">Course</th>
+                    <td class="course-option"> <select class="course-select" name="male_female">
+                            <option>HTML</option>
+                            <option>CSS</option>
+                            <option>Bootstrap</option>
+                            <option>Javascript</option>
+                            <option>React js</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="row_five" >
+                    <th class="email-style">E-mail</th>
+                    <td class="email-text"> <input type="text" id="rowfivez" name="male_female"></td>
+                </tr>   
+        </table>
+        <span class="save-button"><button class="button-style" onclick="add()">Save</button></span>
+    </form>
+    <!--form 2-->
+        <form class="form2" id="formtwo">
+            <!--table 2-->
+            <table class="table-two"  id="tabletwoz">
+            <tr class="row1" >
+                <th id="name" >NAME</th>
+                <th id="age">AGE</th>
+                <th id="course">COURSE</th>
+                <th id="gender">GENDER</th>
+                <th id="email">EMAIL</th>
+                <th id="action">ACTION</th>
+            </tr>
+            <tr class="row2">
+                <td>Sakthi</td>
+                <td>22</td>
+                <td>PYTHON</td>
+                <td>Male</td>
+                <td>sakthijessy@gmail.com</td>
+
+               <td><button>Delete</button></td>
+            </tr>
+            <tr class="row3">
+                <td>Keerthi</td>
+                <td>23</td>
+                <td>JavaScript</td>
+                <td>Male</td>
+                <td>keerthisakthi@gmail.com</td>
+                <td><button>Delete</button></td>
+            </tr>
+           
+        </table>
+        </form>
+
+        <script>
+            function add()
+            {
+                
+            var text1=document.getElementById('rowonez').value;
+            var text2=document.getElementById('rowtwoz').value;
+            var text3=document.getElementById('rowthreez').value;
+            var text4=document.getElementById('rowfourz').value;
+            var text5=document.getElementById('rowfivez').value;
+            //selecting table 2
+            var table2=document.getElementById('tabletwoz');
+            var row=table2.insertRow(0)
+
+            var cell1=row.inserCell(0);
+            var cell2=row.inserCell(1);
+            var cell3=row.inserCell(2);
+            var cell4=row.inserCell(3);
+            var cell5=row.inserCell(4);
+            var cell6=row.inserCell(5);
+            cell1.innerHTML=text1;
+            cell2.innerHTML=text2;
+            cell3.innerHTML=text3;
+            cell4.innerHTML=text4;
+            cell5.innerHTML=text5;
+            cell6.innerHTML=text6;
+
+            }
+
+
+        </script>
+
+
+
+
+
+        <!--
+            /*<script>
+            function add() {
+    var nameValue = document.getElementById('rowonez').value,
+        ageValue = document.getElementById('rowtwoz').value,
+        genderInputs = document.getElementsByName('male_female'),
+        genderValue = '';
+
+    for (var i = 0; i < genderInputs.length; i++) {
+        if (genderInputs[i].checked) {
+            genderValue = genderInputs[i].value;
+            break;
+        }
+    }
+
+    var courseValue = document.querySelector('.course-select').value,
+        emailValue = document.getElementById('rowfivez').value;
+
+    var tableTwo = document.getElementById('tabletwoz'),
+        newRow = tableTwo.insertRow(-1);
+
+    var cell1 = newRow.insertCell(0),
+        cell2 = newRow.insertCell(1),
+        cell3 = newRow.insertCell(2),
+        cell4 = newRow.insertCell(3),
+        cell5 = newRow.insertCell(4),
+        cell6 = newRow.insertCell(5);
+
+    cell1.innerHTML = nameValue;
+    cell2.innerHTML = ageValue;
+    cell3.innerHTML = courseValue;
+    cell4.innerHTML = genderValue;
+    cell5.innerHTML = emailValue;
+    cell6.innerHTML = '<button onclick="deleteRow(this)">Delete</button>';
+}
+
+/*function deleteRow(row) {
+    var i = row.parentNode.parentNode.rowIndex;
+    document.getElementById('tabletwoz').deleteRow(i);
+}*/
+    
+   
+        
+    </body> 
+    
+    </html>
